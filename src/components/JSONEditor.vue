@@ -51,7 +51,7 @@ export default defineComponent({
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .flex {
   display: flex;
   gap: 2rem;
