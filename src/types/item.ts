@@ -1,6 +1,7 @@
 export default interface Item {
     name: string;
-    count: number;
+    id: string;
+    count: number | null;
     completed: boolean;
     editing: boolean;
 }

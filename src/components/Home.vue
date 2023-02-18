@@ -1,18 +1,47 @@
 <script setup lang="ts">
-import CollectionsList from '@/components/CollectionsList.vue';
+import { reactive, watch } from 'vue';
+import Collection from '@/components/Collection.vue';
+import { setCollections, getCollectionsFromStorage } from '@/utility/collections-storage';
+import { v4 as uuidv4 } from 'uuid';
+
+const collections = reactive(getCollectionsFromStorage());
+watch(collections, (newCollections, prevCollections) => {
+    console.log('watch triggered');
+    setCollections(newCollections);
+});
+const addCollection = () => {
+    collections.push({
+        name: '',
+        id: uuidv4(),
+        items: [],
+        complted: false,
+        editing: true,
+    });
+};
+const removeCollection = (id: string) => {
+    const index = collections.findIndex((collections) => collections.id === id);
+    collections.splice(index, 1);
+};
 </script>
 
 <template>
     <v-app>
         <v-app-bar :elevation="2" title="Quest Helper">
             <template v-slot:append>
-                <v-btn>Add Quest!</v-btn>
+                <v-btn @click="addCollection">Add Quest!</v-btn>
             </template>
         </v-app-bar>
-        <v-main>
-            <CollectionsList />
+        <v-main class="collection-container">
+            <Collection v-for="collection in collections" :collection="collection" :key="collection.id"
+                @remove-collection="removeCollection"></Collection>
         </v-main>
-</v-app>
+    </v-app>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+</style>

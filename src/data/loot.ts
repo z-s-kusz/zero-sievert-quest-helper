@@ -1,4 +1,4 @@
-export default {
+const loot = JSON.stringify({
   "common": [
     {
       "label": "Cooking Pot",
@@ -267,4 +267,6 @@ export default {
       "value": "Scrap Weapon"
     }
   ]
-}
+});
+
+export default loot;
