@@ -18,7 +18,7 @@ const allItems = computed((): PartialItems[] => {
     const items: PartialItems[] = [];
     collections.forEach((collection) => {
         collection.items.forEach((item) => {
-            if (item.name.trim() === '') return;
+            if (item.completed || item.name.trim() === '') return;
 
             const alreadyAddedIndex = itemsByName.findIndex((itemByName) => itemByName === item.name);
             const itemCount = item.count || 1;
