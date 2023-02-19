@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ItemContainer from './item/ItemContainer.vue';
 import CollectionType from '@/types/collection';
-import Item from '@/types/Item';
+import Item from '@/types/item';
 import { v4 as uuidv4 } from 'uuid';
 import { ref } from 'vue';
 
