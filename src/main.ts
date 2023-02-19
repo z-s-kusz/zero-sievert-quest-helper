@@ -40,3 +40,10 @@ const app = createApp(App);
 app.use(router);
 app.use(vuetify);
 app.mount('#app');
+
+// pwa stuff - happens after app setup
+window.addEventListener('load', () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+});
