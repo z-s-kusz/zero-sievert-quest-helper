@@ -1,0 +1,23 @@
+{
+  "name": "Loot Helper",
+  "short_name": "Loot Helper",
+  "icons": [
+    {
+      "src": "/cat-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/cat-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0e0e0e",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#000000",
+  "description": "Todo App that tracks and totals counts across tasks."
+}
