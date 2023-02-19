@@ -39,9 +39,9 @@ const allItems = computed((): PartialItems[] => {
 </script>
 
 <template>
-    <v-card title="All Quest Items" class="small-card">
+    <v-card title="All Quest Items" class="small-card" color="secondary">
         <v-card-text>
-            <ul>
+            <ul class="list-container">
                 <li v-for="(item, i) in allItems" :key="i">{{ item.name }} * {{ item.count }}</li>
             </ul>
         </v-card-text>
@@ -52,5 +52,9 @@ const allItems = computed((): PartialItems[] => {
 .small-card {
     max-width: 500px;
     margin: 1rem;
+    min-width: 198px;
+}
+.list-container {
+    list-style-position: inside;
 }
 </style>

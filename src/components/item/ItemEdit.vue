@@ -34,13 +34,13 @@ const remove = () => {
 </script>
 
 <template>
-    <div class="flex">
-        <v-autocomplete class="mx-2" v-model="name" :items="loot" density="compact">
+    <form class="flex" @submit.prevent="save">
+        <v-autocomplete hide-details class="mr-1 name" v-model="name" :items="loot" density="compact" spellcheck="false">
         </v-autocomplete>
-        <v-text-field class="mx-2 count" label="Count" v-model="count" type="number" density="compact"></v-text-field>
-        <v-btn icon="mdi-delete-circle-outline" @click="remove" class="mx-2"></v-btn>
-        <v-btn class="mx-2" icon="mdi-content-save-outline" @click="save"></v-btn>
-    </div>
+        <v-text-field  hide-details class="mx-1 count" label="Count" v-model="count" type="number" density="compact"></v-text-field>
+        <v-btn class="mx-1" icon="mdi-delete-circle-outline" @click.prevent="remove"  color="error"></v-btn>
+        <v-btn type="submit" class="ml-1" icon="mdi-content-save-outline" color="primary"></v-btn>
+    </form>
 </template>
 
 <style scoped lang="scss">
@@ -48,6 +48,9 @@ const remove = () => {
     display: flex;
 }
 
+.name {
+    min-width: 198px
+}
 .count {
     max-width: 80px;
 }

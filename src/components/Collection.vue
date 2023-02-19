@@ -58,12 +58,13 @@ const removeCollection = () => {
 </script>
 
 <template>
+    <v-fade-transition>
     <v-card class="small-card">
         <v-card-title>
             <span v-if="!collection.editing">{{ collection.name }}</span>
             <div v-else class="flex">
-                <v-text-field label="Name" v-model="collectionName"></v-text-field>
-                <v-btn class="mx-2" icon="mdi-delete-circle-outline" @click="removeCollection"></v-btn>
+                <v-text-field label="Quest Name" class="quest-name" v-model="collectionName" @keydown.enter="saveCollection" hide-details density="compact"></v-text-field>
+                <v-btn class="ml-1" icon="mdi-delete-circle-outline" @click="removeCollection" color="error"></v-btn>
             </div>
         </v-card-title>
         <v-card-text>
@@ -71,11 +72,12 @@ const removeCollection = () => {
                 @remove-item="removeItem"></ItemContainer>
         </v-card-text>
         <v-card-actions>
-            <v-btn @click="addNewItem">Add Item</v-btn>
-            <v-btn v-if="!collection.editing" @click="toggleEditCollection">Edit Name</v-btn>
-            <v-btn v-else @click="saveCollection">Save Name</v-btn>
+            <v-btn @click="addNewItem" color="primary">Add Item</v-btn>
+            <v-btn v-if="!collection.editing" @click="toggleEditCollection" color="secondary">Edit/Remove Quest</v-btn>
+            <v-btn v-else @click="saveCollection" color="primary">Save Name</v-btn>
         </v-card-actions>
     </v-card>
+    </v-fade-transition>
 </template>
 
 <style scoped lang="scss">
@@ -83,9 +85,13 @@ const removeCollection = () => {
     display: flex;
     justify-content: space-between;
 }
-
+.quest-name {
+    min-width: 198px;
+}
 .small-card {
     max-width: 500px;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 </style>

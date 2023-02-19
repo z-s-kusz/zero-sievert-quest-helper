@@ -32,12 +32,12 @@ const label = computed(() => {
 
 <template>
     <div class="flex">
-        <v-checkbox v-model="item.completed" @click="updateStatus">
+        <v-checkbox hide-details v-model="item.completed" @click="updateStatus" class="mr-1 checkbox-container">
             <template v-slot:label>
                 <span :class="itemClass">{{ label }}</span>
             </template>
         </v-checkbox>
-        <v-btn icon="mdi-pencil-outline" @click="editItem" class="mx-2"></v-btn>
+        <v-btn icon="mdi-pencil-outline" @click="editItem" class="ml-1" color="secondary"></v-btn>
     </div>
 </template>
 
@@ -49,5 +49,8 @@ const label = computed(() => {
 
 .strike-through {
     text-decoration: line-through;
+}
+.checkbox-container {
+    min-width: 198px;
 }
 </style>

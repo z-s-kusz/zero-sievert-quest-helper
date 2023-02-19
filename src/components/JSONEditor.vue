@@ -37,8 +37,7 @@ export default defineComponent({
   <section>
     <h1>Make a JSON list of Options for Selects (results in console)</h1>
   <form @submit.prevent="addItem()" class="flex">
-    <v-text-field label="Item Name" v-model="item"></v-text-field>
-    <!-- TODO fix button icons here and in remove-->
+    <v-text-field hide-details label="Item Name" v-model="item"></v-text-field>
     <v-btn icon="mdi-add" color="primary"></v-btn>
   </form>
   <v-btn @click="makeFinalJSON()">Generate JSON</v-btn>

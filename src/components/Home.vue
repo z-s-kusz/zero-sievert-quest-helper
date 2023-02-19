@@ -29,7 +29,7 @@ const removeCollection = (id: string) => {
     <v-app>
         <v-app-bar :elevation="2" title="Quest Helper">
             <template v-slot:append>
-                <v-btn @click="addCollection">Add Quest!</v-btn>
+                <v-btn @click="addCollection" color="primary">Add Quest!</v-btn>
             </template>
         </v-app-bar>
         <v-main class="collection-container">
@@ -44,6 +44,6 @@ const removeCollection = (id: string) => {
 .collection-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-content: flex-start;
 }
 </style>
