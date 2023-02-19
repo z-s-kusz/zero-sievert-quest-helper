@@ -3,6 +3,7 @@ import { reactive, watch } from 'vue';
 import Collection from '@/components/Collection.vue';
 import { setCollections, getCollectionsFromStorage } from '@/utility/collections-storage';
 import { v4 as uuidv4 } from 'uuid';
+import GlobalList from './GlobalList.vue';
 
 const collections = reactive(getCollectionsFromStorage());
 watch(collections, (newCollections, prevCollections) => {
@@ -32,6 +33,7 @@ const removeCollection = (id: string) => {
             </template>
         </v-app-bar>
         <v-main class="collection-container">
+            <GlobalList :collections="collections" />
             <Collection v-for="collection in collections" :collection="collection" :key="collection.id"
                 @remove-collection="removeCollection"></Collection>
         </v-main>
