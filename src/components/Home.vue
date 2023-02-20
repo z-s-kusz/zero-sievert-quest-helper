@@ -7,7 +7,6 @@ import GlobalList from './GlobalList.vue';
 
 const collections = reactive(getCollectionsFromStorage());
 watch(collections, (newCollections, prevCollections) => {
-    console.log('watch triggered');
     setCollections(newCollections);
 });
 const addCollection = () => {

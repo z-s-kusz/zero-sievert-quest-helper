@@ -29,6 +29,9 @@ export default defineComponent({
       const json = JSON.stringify(this.items);
       console.log(json);
     },
+    clearList() {
+      this.items = [];
+    },
   },
 });
 </script>
@@ -38,13 +41,14 @@ export default defineComponent({
     <h1>Make a JSON list of Options for Selects (results in console)</h1>
   <form @submit.prevent="addItem()" class="flex">
     <v-text-field hide-details label="Item Name" v-model="item"></v-text-field>
-    <v-btn icon="mdi-add" color="primary"></v-btn>
+    <v-btn type="submit" icon="mdi-plus" color="primary"></v-btn>
   </form>
-  <v-btn @click="makeFinalJSON()">Generate JSON</v-btn>
+  <v-btn @click="makeFinalJSON()" class="mr-2">Generate JSON</v-btn>
+  <v-btn @click="clearList">Clear List</v-btn>
   <h1>Items:</h1>
   <ol>
     <li v-for="(item, i) in items" :key="item.label" class="item">
-      {{ item.label }} <v-btn @click="removeItem(i)" icon="mdi-subtract" color="secondary"></v-btn>
+      {{ item.label }} <v-btn @click="removeItem(i)" icon="mdi-minus" color="secondary"></v-btn>
     </li>
   </ol>
   </section>
