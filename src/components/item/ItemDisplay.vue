@@ -37,7 +37,7 @@ const label = computed(() => {
                 <span :class="itemClass">{{ label }}</span>
             </template>
         </v-checkbox>
-        <v-btn icon="mdi-pencil-outline" @click="editItem" class="ml-1" color="secondary"></v-btn>
+        <v-btn icon="mdi-pencil-outline" @click="editItem" class="ml-1" color="secondary" variant="text"></v-btn>
     </div>
 </template>
 

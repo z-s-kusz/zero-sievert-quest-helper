@@ -72,9 +72,9 @@ const removeCollection = () => {
                 @remove-item="removeItem"></ItemContainer>
         </v-card-text>
         <v-card-actions>
-            <v-btn @click="addNewItem" color="primary">Add Item</v-btn>
             <v-btn v-if="!collection.editing" @click="toggleEditCollection" color="secondary">Edit/Remove Quest</v-btn>
-            <v-btn v-else @click="saveCollection" color="primary">Save Name</v-btn>
+            <v-btn v-else @click="saveCollection" color="primary">Save Quest</v-btn>
+            <v-btn @click="addNewItem" color="primary">Add Item</v-btn>
         </v-card-actions>
     </v-card>
     </v-fade-transition>
