@@ -266,7 +266,97 @@ const loot = JSON.stringify({
       "label": "Scrap Weapon",
       "value": "Scrap Weapon"
     }
-  ]
+  ],
+  "valuables": [
+    {
+      "label": "Fragrance",
+      "value": "Fragrance"
+    },
+    {
+      "label": "Golden Bracelet",
+      "value": "Golden Bracelet"
+    },
+    {
+      "label": "Gold Wristwatch",
+      "value": "Gold Wristwatch"
+    },
+    {
+      "label": "Golden Crucifix",
+      "value": "Golden Crucifix"
+    },
+    {
+      "label": "Golden Zippo",
+      "value": "Golden Zippo"
+    },
+    {
+      "label": "Silver Bracelet",
+      "value": "Silver Bracelet"
+    },
+    {
+      "label": "Wristwatch",
+      "value": "Wristwatch"
+    },
+    {
+      "label": "Roubles",
+      "value": "Roubles"
+    }
+  ],
+  "fauna": [
+    {
+      "label": "Blink's Claw",
+      "value": "Blink's Claw"
+    },
+    {
+      "label": "Big's Tooth",
+      "value": "Big's Tooth"
+    },
+    {
+      "label": "Boar Fang",
+      "value": "Boar Fang"
+    },
+    {
+      "label": "Boar Pelt",
+      "value": "Boar Pelt"
+    },
+    {
+      "label": "Ghoul's Tentacle",
+      "value": "Ghoul's Tentacle"
+    },
+    {
+      "label": "Raw Meat",
+      "value": "Raw Meat"
+    },
+    {
+      "label": "Rabbit Pelt",
+      "value": "Rabbit Pelt"
+    },
+    {
+      "label": "Spider Eye",
+      "value": "Spider Eye"
+    },
+    {
+      "label": "Spider Web",
+      "value": "Spider Web"
+    },
+    {
+      "label": "Wolf Pelt",
+      "value": "Wolf Pelt"
+    }
+  ],
+  "crystals": [
+    {
+      "label": "Fire Crystal",
+      "value": "Fire Crystal"
+    },
+    {
+      "label": "Chemical Crystal",
+      "value": "Chemical Crystal"
+    },
+    {
+      "label": "Electric Crystal",
+      "value": "Electric Crystal"
+    }
+  ],
 });
 
 export default loot;

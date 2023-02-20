@@ -14,7 +14,15 @@ const name = ref(item.name);
 const count = ref(item.count);
 
 const lootCats = JSON.parse(lootJSON);
-const loot = [...lootCats.common, ...lootCats.electronics, ...lootCats.tools, ...lootCats.scrap].map((item) => item.label);
+const loot = [
+    ...lootCats.common,
+    ...lootCats.electronics,
+    ...lootCats.tools,
+    ...lootCats.scrap,
+    ...lootCats.valuables,
+    ...lootCats.fauna,
+    ...lootCats.crystals,
+].map((item) => item.label);
 
 const save = () => {
     const countAsInt = count.value ? parseInt(`${count.value}`, 10) : 0;
