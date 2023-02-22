@@ -25,10 +25,10 @@ const loot = [
 ].map((item) => item.label);
 
 const save = () => {
-    const countAsInt = count.value ? parseInt(`${count.value}`, 10) : 0;
+    const countAsInt = count.value ? parseInt(`${count.value}`, 10) : 1;
     const updatedItem = {
         id: item.id,
-        name: name.value,
+        name: name.value.trim(),
         count: countAsInt,
         editing: false,
         completed: false,

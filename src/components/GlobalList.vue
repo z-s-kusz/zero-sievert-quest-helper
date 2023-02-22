@@ -18,14 +18,14 @@ const allItems = computed((): PartialItems[] => {
     const items: PartialItems[] = [];
     collections.forEach((collection) => {
         collection.items.forEach((item) => {
-            if (item.completed || item.name.trim() === '') return;
+            if (item.completed || item.name === '') return;
 
-            const alreadyAddedIndex = itemsByName.findIndex((itemByName) => itemByName === item.name);
+            const alreadyAddedIndex = itemsByName.findIndex((itemByName) => itemByName === item.name.toLowerCase());
             const itemCount = item.count || 1;
             if (alreadyAddedIndex !== -1) {
                 items[alreadyAddedIndex].count += itemCount;
             } else {
-                itemsByName.push(item.name);
+                itemsByName.push(item.name.toLowerCase());
                 items.push({
                     name: item.name,
                     count: itemCount,
