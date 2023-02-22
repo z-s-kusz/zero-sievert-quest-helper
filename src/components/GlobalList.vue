@@ -44,6 +44,10 @@ const allItems = computed((): PartialItems[] => {
             <ul class="list-container">
                 <li v-for="(item, i) in allItems" :key="i">{{ item.name }} * {{ item.count }}</li>
             </ul>
+            <div v-if="allItems.length === 0">
+                <p>This section will list totals of all the items you need for all quests.</p>
+                <p>Click "Add Quest!" in the top right corner to get started.</p>
+            </div>
         </v-card-text>
     </v-card>
 </template>
@@ -56,5 +60,11 @@ const allItems = computed((): PartialItems[] => {
 }
 .list-container {
     list-style-position: inside;
+    li {
+        font-weight: bold;
+    }
 }
+    p {
+        max-width: 198px;
+    }
 </style>
