@@ -8,6 +8,7 @@ interface Props {
 }
 const props = defineProps<Props>();
 const emit = defineEmits(['saveItem', 'removeItem']);
+// TODO fix my broken reassigned props!!!!
 const item = props.item;
 
 const name = ref(item.name);
@@ -43,11 +44,11 @@ const remove = () => {
 
 <template>
     <form class="flex" @submit.prevent="save">
-        <v-combobox
-            hide-details class="mr-1 name" v-model="name" :items="loot" density="compact" spellcheck="false">
+        <v-combobox hide-details class="mr-1 name" v-model="name" :items="loot" density="compact" spellcheck="false">
         </v-combobox>
-        <v-text-field  hide-details class="mx-1 count" label="Count" v-model="count" type="number" density="compact"></v-text-field>
-        <v-btn class="mx-1" icon="mdi-delete-circle-outline" @click.prevent="remove"  color="error"></v-btn>
+        <v-text-field hide-details class="mx-1 count" label="Count" v-model="count" type="number"
+            density="compact"></v-text-field>
+        <v-btn class="mx-1" icon="mdi-delete-circle-outline" @click.prevent="remove" color="error"></v-btn>
         <v-btn type="submit" class="ml-1" icon="mdi-content-save-outline" color="primary"></v-btn>
     </form>
 </template>
@@ -60,6 +61,7 @@ const remove = () => {
 .name {
     min-width: 198px
 }
+
 .count {
     max-width: 78px;
 }
