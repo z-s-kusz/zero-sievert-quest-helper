@@ -7,11 +7,10 @@ interface Props {
 }
 const props = defineProps<Props>();
 defineEmits(['saveItem', 'removeItem']);
-const item = props.item;
 </script>
 
 <template>
-    <ItemEdit v-if="item.editing" :item="item" @save-item="$emit('saveItem', $event)"
+    <ItemEdit v-if="props.item.editing" :item="props.item" @save-item="$emit('saveItem', $event)"
         @remove-item="$emit('removeItem', $event)" />
-    <ItemDisplay v-else :item="item" @save-item="$emit('saveItem', $event)" />
+    <ItemDisplay v-else :item="props.item" @save-item="$emit('saveItem', $event)" />
 </template>

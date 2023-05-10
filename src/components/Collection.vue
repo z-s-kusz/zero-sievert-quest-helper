@@ -10,8 +10,7 @@ interface Props {
 }
 const props = defineProps<Props>();
 const emit = defineEmits(['removeCollection']);
-const collection = props.collection;
-const items = collection.items;
+const items = props.collection.items;
 const defaultItem = {
     name: '',
     id: '',
@@ -25,7 +24,7 @@ const saveItem = (updatedItem: Item) => {
     //     if (item.id === updatedItem.id) return updatedItem;
     //     return item;
     // });
-    const itemRef = collection.items.find((item) => item.id === updatedItem.id);
+    const itemRef = props.collection.items.find((item) => item.id === updatedItem.id);
     if (!itemRef) return console.error('item not found!'); // needed for typescript
     itemRef.completed = updatedItem.completed;
     itemRef.count = updatedItem.count;
@@ -33,50 +32,52 @@ const saveItem = (updatedItem: Item) => {
     itemRef.name = updatedItem.name;
 };
 const removeItem = (id: string) => {
-    const index = collection.items.findIndex((item) => item.id === id);
-    collection.items.splice(index, 1);
+    const index = props.collection.items.findIndex((item) => item.id === id);
+    props.collection.items.splice(index, 1);
 };
 const addNewItem = () => {
     const newItem = {
         ...defaultItem,
         id: uuidv4(),
     }
-    collection.items.push(newItem);
+    props.collection.items.push(newItem);
 };
 
-const collectionName = ref(collection.name);
+const collectionName = ref(props.collection.name);
 const saveCollection = () => {
-    collection.name = collectionName.value;
-    collection.editing = false;
+    props.collection.name = collectionName.value;
+    props.collection.editing = false;
 };
 const toggleEditCollection = () => {
-    collection.editing = !collection.editing;
+    props.collection.editing = !props.collection.editing;
 };
 const removeCollection = () => {
-    emit('removeCollection', collection.id);
+    emit('removeCollection', props.collection.id);
 };
 </script>
 
 <template>
     <v-fade-transition>
-    <v-card class="small-card">
-        <v-card-title>
-            <span v-if="!collection.editing">{{ collection.name }}</span>
-            <div v-else class="flex">
-                <v-text-field label="Quest Name" class="quest-name" v-model="collectionName" @keydown.enter="saveCollection" hide-details density="compact"></v-text-field>
-                <v-btn class="ml-1" icon="mdi-delete-circle-outline" @click="removeCollection" color="error"></v-btn>
-            </div>
-        </v-card-title>
-        <v-card-text>
-            <ItemContainer v-for="item in items" :key="item.id" :item="item" @save-item="saveItem"
-                @remove-item="removeItem"></ItemContainer>
-        </v-card-text>
-        <v-card-actions>
-            <v-btn v-if="!collection.editing" @click="toggleEditCollection" color="secondary">Edit/Remove Quest</v-btn>
-            <v-btn v-else @click="saveCollection" color="primary">Save Quest</v-btn>
-            <v-btn @click="addNewItem" color="primary">Add Item</v-btn>
-        </v-card-actions>
-    </v-card>
+        <v-card class="small-card">
+            <v-card-title>
+                <span v-if="!props.collection.editing">{{ props.collection.name }}</span>
+                <div v-else class="flex">
+                    <v-text-field label="Quest Name" class="quest-name" v-model="collectionName"
+                        @keydown.enter="saveCollection" hide-details density="compact"></v-text-field>
+                    <v-btn class="ml-1" icon="mdi-delete-circle-outline" @click="removeCollection" color="error"></v-btn>
+                </div>
+            </v-card-title>
+            <v-card-text>
+                <ItemContainer v-for="item in items" :key="item.id" :item="item" @save-item="saveItem"
+                    @remove-item="removeItem"></ItemContainer>
+            </v-card-text>
+            <v-card-actions>
+                <v-btn v-if="!props.collection.editing" @click="toggleEditCollection" color="secondary">Edit/Remove
+                    Quest</v-btn>
+                <v-btn v-else @click="saveCollection" color="primary">Save Quest</v-btn>
+                <v-btn @click="addNewItem" color="primary">Add Item</v-btn>
+            </v-card-actions>
+        </v-card>
     </v-fade-transition>
 </template>
 
@@ -85,9 +86,11 @@ const removeCollection = () => {
     display: flex;
     justify-content: space-between;
 }
+
 .quest-name {
     min-width: 198px;
 }
+
 .small-card {
     max-width: 500px;
     margin: 1rem;

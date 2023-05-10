@@ -7,32 +7,31 @@ interface Props {
 }
 const props = defineProps<Props>();
 const emit = defineEmits(['saveItem']);
-const item = props.item;
 const editItem = () => {
     const updatedItem = {
-        ...item,
+        ...props.item,
         editing: true,
     };
     emit('saveItem', updatedItem);
 };
 const updateStatus = () => {
     const updatedItem = {
-        ...item,
-        completed: !item.completed,
+        ...props.item,
+        completed: !props.item.completed,
     };
     emit('saveItem', updatedItem);
 };
 const itemClass = computed(() => {
-    return item.completed ? 'strike-through' : '';
+    return props.item.completed ? 'strike-through' : '';
 });
 const label = computed(() => {
-    return `${item.name} * ${item.count || 1}`;
+    return `${props.item.name} * ${props.item.count || 1}`;
 });
 </script>
 
 <template>
     <div class="flex">
-        <v-checkbox hide-details v-model="item.completed" @click="updateStatus" class="mr-1 checkbox-container">
+        <v-checkbox hide-details v-model="props.item.completed" @click="updateStatus" class="mr-1 checkbox-container">
             <template v-slot:label>
                 <span :class="itemClass">{{ label }}</span>
             </template>
@@ -50,6 +49,7 @@ const label = computed(() => {
 .strike-through {
     text-decoration: line-through;
 }
+
 .checkbox-container {
     min-width: 198px;
 }

@@ -8,11 +8,9 @@ interface Props {
 }
 const props = defineProps<Props>();
 const emit = defineEmits(['saveItem', 'removeItem']);
-// TODO fix my broken reassigned props!!!!
-const item = props.item;
 
-const name = ref(item.name);
-const count = ref(item.count);
+const name = ref(props.item.name);
+const count = ref(props.item.count);
 
 const lootCats = JSON.parse(lootJSON);
 const loot = [
@@ -28,7 +26,7 @@ const loot = [
 const save = () => {
     const countAsInt = count.value ? parseInt(`${count.value}`, 10) : 1;
     const updatedItem = {
-        id: item.id,
+        id: props.item.id,
         name: name.value.trim(),
         count: countAsInt,
         editing: false,
@@ -38,7 +36,7 @@ const save = () => {
 }
 
 const remove = () => {
-    emit('removeItem', item.id);
+    emit('removeItem', props.item.id);
 };
 </script>
 

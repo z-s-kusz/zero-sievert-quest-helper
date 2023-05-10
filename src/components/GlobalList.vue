@@ -11,12 +11,11 @@ interface PartialItems {
 }
 
 const props = defineProps<Props>();
-const collections = props.collections;
 
 const allItems = computed((): PartialItems[] => {
     const itemsByName: string[] = [];
     const items: PartialItems[] = [];
-    collections.forEach((collection) => {
+    props.collections.forEach((collection) => {
         collection.items.forEach((item) => {
             if (item.completed || item.name === '') return;
 
@@ -58,13 +57,15 @@ const allItems = computed((): PartialItems[] => {
     margin: 1rem;
     min-width: 198px;
 }
+
 .list-container {
     list-style-position: inside;
+
     li {
         font-weight: bold;
     }
 }
-    p {
-        max-width: 198px;
-    }
-</style>
+
+p {
+    max-width: 198px;
+}</style>
