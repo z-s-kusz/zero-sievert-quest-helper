@@ -5,9 +5,9 @@ const corsHeader = {
 };
 
 const serviceEndpoint = 'https://sheets.googleapis.com/v4/spreadsheets';
-const sheetId = Netlify.env.get('SHEET_ID');
+const sheetId = process.env.SHEET_ID;
 const sheetName = 'QUESTS';
-const keys = JSON.parse(Netlify.env.get('GOOG_CREDENTIALS'));
+const keys = JSON.parse(process.env.GOOG_CREDENTIALS);
 
 const client = google.auth.fromJSON(keys);
 client.scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
