@@ -41,3 +41,9 @@ Ran with a global install of netlify functions - I did add it to dev dependencie
 
 Site should work locally without netlify setup with `npm run dev` but console errors for the failed request will log.
 Or you could comment out the Add Quests Dialog/Button component to remove any netlify functions dependent code.
+
+.env file with the following properties is needed:
+`SHEET_ID=_your_google_sheets_id_`
+`GOOG_CREDENTIALS=_credentials_JSON_on_one_line_`
+
+See https://github.com/z-s-kusz/google-sheets-cms-test for more details.
