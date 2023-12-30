@@ -1,78 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useGetDBCollections } from '@/hooks/useGetDBCollections';
 
 const emit = defineEmits(['addCollection']);
 const selection = ref<any>({});
+const { collections, error } = useGetDBCollections();
+
 const confirmSelection = (dialogActiveControl: any) => {
     emit('addCollection', selection.value);
     dialogActiveControl.value = false;
     selection.value = {};
 };
-const quests = [
-    {
-        name: 'Test Quest',
-        id: 1,
-        editing: false,
-        items: [
-            {
-                name: 'Fork',
-                id: 1,
-                count: 20,
-                completed: false,
-                editing: false,
-            },
-            {
-                name: 'Spoon',
-                id: 2,
-                count: 3,
-                completed: false,
-                editing: false
-            },
-        ],
-    },
-    {
-        name: 'Another One',
-        id: 2,
-        editing: false,
-        items: [
-            {
-                name: 'Fork',
-                id: 1,
-                count: 20,
-                completed: false,
-                editing: false,
-            },
-            {
-                name: 'Spoon',
-                id: 2,
-                count: 3,
-                completed: false,
-                editing: false
-            },
-            {
-                name: 'TV',
-                id: 3,
-                count: 2,
-                completed: false,
-                editing: false,
-            },
-            {
-                name: 'Wrench',
-                id: 4,
-                count: 5,
-                completed: false,
-                editing: false,
-            },
-            {
-                name: 'Cooking Pot',
-                id: 5,
-                count: 1,
-                completed: false,
-                editing: false,
-            },
-        ],
-    },
-];
 
 const setSelection = (quest: any) => {
     selection.value = quest;
@@ -97,7 +35,7 @@ const setSelection = (quest: any) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="quest in quests" :key="quest.id" @click="setSelection(quest)"
+                        <tr v-for="quest in collections" :key="quest.id" @click="setSelection(quest)"
                             :class="selection.id === quest.id ? 'selected' : ''">
                             <td>{{ quest.name }}</td>
                             <td>
@@ -108,6 +46,7 @@ const setSelection = (quest: any) => {
                         </tr>
                     </tbody>
                 </v-table>
+                <v-card-text v-if="error">{{ error }}</v-card-text>
 
                 <v-card-actions>
                     <v-btn @click="isActive.value = false">Cancel</v-btn>
