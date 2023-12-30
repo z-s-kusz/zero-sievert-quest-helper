@@ -45,7 +45,11 @@ const allItems = computed((): PartialItems[] => {
             </ul>
             <div v-if="allItems.length === 0">
                 <p>This section will list totals of all the items you need for all quests.</p>
-                <p>Click "Add Quest!" in the top right corner to get started.</p>
+                <p>Click "Add Quest!" in the top right corner to get started with quests and room modules added via the
+                    wiki.</p>
+                <p>Click "Create New Quest!" to manually enter your own lists.
+                    It's especially useful for daily quests.
+                </p>
             </div>
         </v-card-text>
     </v-card>
@@ -68,4 +72,6 @@ const allItems = computed((): PartialItems[] => {
 
 p {
     max-width: 198px;
-}</style>
+    padding: 0.5rem 0;
+}
+</style>
