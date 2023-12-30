@@ -47,3 +47,10 @@ Or you could comment out the Add Quests Dialog/Button component to remove any ne
 `GOOG_CREDENTIALS=_credentials_JSON_on_one_line_`
 
 See https://github.com/z-s-kusz/google-sheets-cms-test for more details.
+
+### Notes to Self / Troubleshooting
+
+Netlify Functions get started guide recommended using `Netlify.env.get("MY_API_KEY");` to access .env variables.
+However, I was getting errors back in my api call that "Netlify is not defined" pointing to the line with `Netlify.env.get("MY_API_KEY");`.
+After further reading I found that Netlify.env is only available in edge functions and `process.env` should be used elsewhere.
+Further, edge functions seem to have access to process.env so I'm not sure why the Netlify specific syntax is recommended for env variables in the get started guide.
