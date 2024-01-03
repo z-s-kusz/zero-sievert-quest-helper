@@ -1,362 +1,117 @@
 const loot = JSON.stringify({
   "common": [
-    {
-      "label": "Cooking Pot",
-      "value": "Cooking Pot"
-    },
-    {
-      "label": "Fork",
-      "value": "Fork"
-    },
-    {
-      "label": "Knife",
-      "value": "Knife"
-    },
-    {
-      "label": "Spoon",
-      "value": "Spoon"
-    },
-    {
-      "label": "Lighter",
-      "value": "Lighter"
-    },
-    {
-      "label": "Zippo Lighter",
-      "value": "Zippo Lighter"
-    },
-    {
-      "label": "Matches",
-      "value": "Matches"
-    },
-    {
-      "label": "Molbaro Cigarette",
-      "value": "Molbaro Cigarette"
-    },
-    {
-      "label": "Wilfon Cigarette",
-      "value": "Wilfon Cigarette"
-    },
-    {
-      "label": "Pepper",
-      "value": "Pepper"
-    },
-    {
-      "label": "Salt",
-      "value": "Salt"
-    },
-    {
-      "label": "Toilet Paper",
-      "value": "Toilet Paper"
-    }
+    "Cooking Pot",
+    "Fork",
+    "Knife",
+    "Spoon",
+    "Lighter",
+    "Zippo Lighter",
+    "Matches",
+    "Molbaro Cigarette",
+    "Wilfon Cigarette",
+    "Pepper",
+    "Salt",
+    "Toilet Paper"
   ],
   "electronics": [
-    {
-      "label": "AAA Battery",
-      "value": "AAA Battery"
-    },
-    {
-      "label": "Bulb",
-      "value": "Bulb"
-    },
-    {
-      "label": "Car Battery",
-      "value": "Car Battery"
-    },
-    {
-      "label": "CPU",
-      "value": "CPU"
-    },
-    {
-      "label": "DVD Drive",
-      "value": "DVD Drive"
-    },
-    {
-      "label": "Electric Motor",
-      "value": "Electric Motor"
-    },
-    {
-      "label": "Fan",
-      "value": "Fan"
-    },
-    {
-      "label": "Gamestation",
-      "value": "Gamestation"
-    },
-    {
-      "label": "GM Counter",
-      "value": "GM Counter"
-    },
-    {
-      "label": "Hair Dryer",
-      "value": "Hair Dryer"
-    },
-    {
-      "label": "Hard Disk",
-      "value": "Hard Disk"
-    },
-    {
-      "label": "Military Circuit",
-      "value": "Military Circuit"
-    },
-    {
-      "label": "Multi-Plug",
-      "value": "Multi-Plug"
-    },
-    {
-      "label": "Portable Console",
-      "value": "Portable Console"
-    },
-    {
-      "label": "Power Bank",
-      "value": "Power Bank"
-    },
-    {
-      "label": "Power Outlet",
-      "value": "Power Outlet"
-    },
-    {
-      "label": "Scientific Analyzer",
-      "value": "Scientific Analyzer"
-    },
-    {
-      "label": "Spark Plug",
-      "value": "Spark Plug"
-    },
-    {
-      "label": "RAM",
-      "value": "RAM"
-    },
-    {
-      "label": "Relay",
-      "value": "Relay"
-    },
-    {
-      "label": "SSD Drive",
-      "value": "SSD Drive"
-    },
-    {
-      "label": "Smartphone",
-      "value": "Smartphone"
-    },
-    {
-      "label": "Wires",
-      "value": "Wires"
-    },
-    {
-      "label": "USB",
-      "value": "USB"
-    }
+    "AAA Battery",
+    "Bulb",
+    "Car Battery",
+    "CPU",
+    "DVD Drive",
+    "Electric Motor",
+    "Fan",
+    "Gamestation",
+    "GM Counter",
+    "Hair Dryer",
+    "Hard Disk",
+    "Military Circuit",
+    "Multi-Plug",
+    "Portable Console",
+    "Power Bank",
+    "Power Outlet",
+    "Scientific Analyzer",
+    "Spark Plug",
+    "RAM",
+    "Relay",
+    "SSD Drive",
+    "Smartphone",
+    "Wires",
+    "USB",
   ],
   "tools": [
-    {
-      "label": "Alchohol",
-      "value": "Alchohol"
-    },
-    {
-      "label": "Bolt Cutter",
-      "value": "Bolt Cutter"
-    },
-    {
-      "label": "Bug Spray",
-      "value": "Bug Spray"
-    },
-    {
-      "label": "Drill",
-      "value": "Drill"
-    },
-    {
-      "label": "Duct Tape",
-      "value": "Duct Tape"
-    },
-    {
-      "label": "Dumbell",
-      "value": "Dumbell"
-    },
-    {
-      "label": "Engine Oil",
-      "value": "Engine Oil"
-    },
-    {
-      "label": "Hammer",
-      "value": "Hammer"
-    },
-    {
-      "label": "Hose",
-      "value": "Hose"
-    },
-    {
-      "label": "Hydrogen Peroxide",
-      "value": "Hydrogen Peroxide"
-    },
-    {
-      "label": "Metal Pipe",
-      "value": "Metal Pipe"
-    },
-    {
-      "label": "Nail",
-      "value": "Nail"
-    },
-    {
-      "label": "Papers",
-      "value": "Papers"
-    },
-    {
-      "label": "Pliers",
-      "value": "Pliers"
-    },
-    {
-      "label": "Propane Tank",
-      "value": "Propane Tank"
-    },
-    {
-      "label": "Rope",
-      "value": "Rope"
-    },
-    {
-      "label": "Screwdriver",
-      "value": "Screwdriver"
-    },
-    {
-      "label": "Screw Nut",
-      "value": "Screw Nut"
-    },
-    {
-      "label": "Shampoo",
-      "value": "Shampoo"
-    },
-    {
-      "label": "Soap",
-      "value": "Soap"
-    },
-    {
-      "label": "Tape Measure",
-      "value": "Tape Measure"
-    },
-    {
-      "label": "Wheel",
-      "value": "Wheel"
-    },
-    {
-      "label": "White Paint",
-      "value": "White Paint"
-    },
-    {
-      "label": "Wrench",
-      "value": "Wrench"
-    }
+    "Alchohol",
+    "Bolt Cutter",
+    "Bug Spray",
+    "Drill",
+    "Duct Tape",
+    "Dumbell",
+    "Engine Oil",
+    "Hammer",
+    "Hose",
+    "Hydrogen Peroxide",
+    "Metal Pipe",
+    "Nail",
+    "Papers",
+    "Pliers",
+    "Propane Tank",
+    "Rope",
+    "Screwdriver",
+    "Screw Nut",
+    "Shampoo",
+    "Soap",
+    "Tape Measure",
+    "Wheel",
+    "White Paint",
+    "Wrench",
   ],
   "scrap": [
-    {
-      "label": "Scrap Ammo",
-      "value": "Scrap Ammo"
-    },
-    {
-      "label": "Scrap Food",
-      "value": "Scrap Food"
-    },
-    {
-      "label": "Scrap Material",
-      "value": "Scrap Material"
-    },
-    {
-      "label": "Scrap Medicine",
-      "value": "Scrap Medicine"
-    },
-    {
-      "label": "Scrap Weapon",
-      "value": "Scrap Weapon"
-    }
+    "Scrap Ammo",
+    "Scrap Food",
+    "Scrap Material",
+    "Scrap Medicine",
+    "Scrap Weapon",
   ],
   "valuables": [
-    {
-      "label": "Fragrance",
-      "value": "Fragrance"
-    },
-    {
-      "label": "Golden Bracelet",
-      "value": "Golden Bracelet"
-    },
-    {
-      "label": "Gold Wristwatch",
-      "value": "Gold Wristwatch"
-    },
-    {
-      "label": "Golden Crucifix",
-      "value": "Golden Crucifix"
-    },
-    {
-      "label": "Golden Zippo",
-      "value": "Golden Zippo"
-    },
-    {
-      "label": "Silver Bracelet",
-      "value": "Silver Bracelet"
-    },
-    {
-      "label": "Wristwatch",
-      "value": "Wristwatch"
-    },
-    {
-      "label": "Roubles",
-      "value": "Roubles"
-    }
+    "Fragrance",
+    "Golden Bracelet",
+    "Gold Wristwatch",
+    "Golden Crucifix",
+    "Golden Zippo",
+    "Silver Bracelet",
+    "Wristwatch",
+    "Roubles",
   ],
   "fauna": [
-    {
-      "label": "Blink's Claw",
-      "value": "Blink's Claw"
-    },
-    {
-      "label": "Big's Tooth",
-      "value": "Big's Tooth"
-    },
-    {
-      "label": "Boar Fang",
-      "value": "Boar Fang"
-    },
-    {
-      "label": "Boar Pelt",
-      "value": "Boar Pelt"
-    },
-    {
-      "label": "Ghoul's Tentacle",
-      "value": "Ghoul's Tentacle"
-    },
-    {
-      "label": "Raw Meat",
-      "value": "Raw Meat"
-    },
-    {
-      "label": "Rabbit Pelt",
-      "value": "Rabbit Pelt"
-    },
-    {
-      "label": "Spider Eye",
-      "value": "Spider Eye"
-    },
-    {
-      "label": "Spider Web",
-      "value": "Spider Web"
-    },
-    {
-      "label": "Wolf Pelt",
-      "value": "Wolf Pelt"
-    }
+    "Blink's Claw",
+    "Big's Tooth",
+    "Boar Fang",
+    "Boar Pelt",
+    "Ghoul's Tentacle",
+    "Raw Meat",
+    "Rabbit Pelt",
+    "Spider Eye",
+    "Spider Web",
+    "Wolf Pelt",
   ],
   "crystals": [
-    {
-      "label": "Fire Crystal",
-      "value": "Fire Crystal"
-    },
-    {
-      "label": "Chemical Crystal",
-      "value": "Chemical Crystal"
-    },
-    {
-      "label": "Electric Crystal",
-      "value": "Electric Crystal"
-    }
+    "Fire Crystal",
+    "Chemical Crystal",
+    "Electric Crystal",
   ],
+  "medical supply": [
+    "Bandage",
+    "Sterilized Bandage",
+    "Anti-Bleed Gel",
+    "Anti-Rad Pill",
+    "Chow-Down Injector",
+    "Rad Shield Injector",
+    "Body Fortifying Injector",
+    "Healing Stimulant Injector",
+    "Bloodsucker Injector",
+    "Endurance Booster Injector",
+    "Burden Injector",
+  ]
 });
 
 export default loot;

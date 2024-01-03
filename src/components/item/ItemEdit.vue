@@ -12,16 +12,12 @@ const emit = defineEmits(['saveItem', 'removeItem']);
 const name = ref(props.item.name);
 const count = ref(props.item.count);
 
+// TODO remember why I split items into categories instead of an array of all, what future work did I have in mind?
 const lootCats = JSON.parse(lootJSON);
-const loot = [
-    ...lootCats.common,
-    ...lootCats.electronics,
-    ...lootCats.tools,
-    ...lootCats.scrap,
-    ...lootCats.valuables,
-    ...lootCats.fauna,
-    ...lootCats.crystals,
-].map((item) => item.label);
+const loot: string[] = [];
+Object.keys(lootCats).forEach((key) => {
+    loot.push(...lootCats[key]);
+});
 
 const save = () => {
     const countAsInt = count.value ? parseInt(`${count.value}`, 10) : 1;
