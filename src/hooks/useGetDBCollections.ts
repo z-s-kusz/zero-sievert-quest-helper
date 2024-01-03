@@ -17,8 +17,8 @@ export function useGetDBCollections() {
         return collections;
     };
 
-    const getCollections = () => {
-        if (shouldLoadFromNetwork()) {
+    const getCollections = (forceNetworkLoad = false) => {
+        if (forceNetworkLoad || shouldLoadFromNetwork()) {
             isLoading.value = true;
             const url = '/.netlify/functions/get-quests';
 
